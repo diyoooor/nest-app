@@ -14,7 +14,6 @@ async function bootstrap() {
   const config = new DocumentBuilder()
     .setTitle('NestJS API example')
     .setDescription('NestJS API for personal learning')
-    .setBasePath('api/v1')
     .setVersion('0.1.0')
     .setContact('API Support','','chutiphong.charoenchao@gmail.com')
     .build();

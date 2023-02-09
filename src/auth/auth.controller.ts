@@ -4,6 +4,7 @@ import { Route, Services } from "src/utils/constants";
 import { ApiTags } from "@nestjs/swagger";
 import { IUserService } from "src/users/users";
 import { IAuthService } from "./auth";
+import { instanceToPlain } from "class-transformer";
 
 @ApiTags("auth")
 @Controller(Route.AUTH)
@@ -12,8 +13,7 @@ export class AuthController {
 
   @Post("register")
   async createUser(@Body() body: CreateUserDto) {
-    console.log(body);
-    this.userService.createUser(body);
+    return instanceToPlain(await this.userService.createUser(body));
   }
 
   @Post("login")

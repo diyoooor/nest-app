@@ -4,6 +4,7 @@ import { AuthModule } from "./auth/auth.module";
 import { UsersModule } from "./users/users.module";
 import { TypeOrmModule } from "@nestjs/typeorm";
 import { PassportModule } from "@nestjs/passport";
+import { CategoriesModule } from './categories/categories.module';
 
 import entities from "./utils/typeorm";
 
@@ -25,6 +26,7 @@ import entities from "./utils/typeorm";
       synchronize: true,
       entities,
     }),
+    CategoriesModule,
   ],
 })
 export class AppModule {}

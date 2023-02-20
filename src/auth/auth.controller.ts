@@ -8,7 +8,7 @@ import { IAuthService } from "./auth";
 import { instanceToPlain } from "class-transformer";
 import { LocalAuthGuard } from "./utils/Guards";
 
-@ApiTags("auth")
+@ApiTags(Route.AUTH)
 @Controller(Route.AUTH)
 export class AuthController {
   constructor(@Inject(Services.AUTH) private readonly authService: IAuthService, @Inject(Services.USERS) private userService: IUserService) {}
